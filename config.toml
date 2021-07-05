@@ -1,0 +1,83 @@
+# Inserts a blank line between shell prompts
+format = """
+[HK](bold fg:red)[@](fg:bright-green)[Devs](italic fg:purple) [➜](bold green) $directory(fg:orange)\ 
+$username\
+$hostname\
+$shlvl\
+$vcsh\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$hg_branch\
+$docker_context\
+$package\
+$cmake\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$helm\
+$java\
+$julia\
+$kotlin\
+$nim\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$purescript\
+$python\
+$red\
+$ruby\
+$rust\
+$scala\
+$swift\
+$terraform\
+$vlang\
+$vagrant\
+$zig\
+$nix_shell\
+$conda\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$env_var\
+$crystal\
+$custom\
+$cmd_duration\
+$line_break\
+$lua\
+$jobs\
+$battery\
+$time\
+$status\
+$shell\
+  [❯](cyan) """
+[battery]
+full_symbol = "🔋 "
+charging_symbol = "⚡️ "
+discharging_symbol = "💀 "
+
+[[battery.display]]
+threshold = 10
+style = "bold red"
+
+[character]
+success_symbol = "[➜](bold green) "
+error_symbol = "[✗](bold red) "
+[conda]
+format = "[$symbol$environment](dimmed green) "
+
+[docker_context]
+format = "via [🐋 $context](blue bold)"
+[git_branch]
+symbol = "🌱" 
+
+[git_commit]
+tag_symbol = "🔖 "
+
