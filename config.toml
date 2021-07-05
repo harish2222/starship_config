@@ -81,3 +81,10 @@ symbol = "🌱"
 [git_commit]
 tag_symbol = "🔖 "
 
+[custom.gaa]
+command = "git add -all"  # shows output of command
+format = " transcending [$output]($style)"
+
+[custom.gcsm]
+command = "git commit -s -m"
+format = " transcending [$output]($style)"
