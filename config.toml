@@ -1,6 +1,6 @@
 # Inserts a blank line between shell prompts
 format = """
-[HK](bold fg:red)[@](fg:bright-green)[Devs](italic fg:purple) [➜](bold green) $directory(fg:orange)\ 
+[HK](bold fg:#ED335F)[@](fg:bright-green)[Devs](italic fg:purple) [➜](bold green) [$directory](fg:orange) $battery\ 
 $username\
 $hostname\
 $shlvl\
@@ -52,13 +52,10 @@ $custom\
 $cmd_duration\
 $line_break\
 $lua\
-$jobs\
-$battery\
-$time\
 $status\
 $shell\
   [❯](red)[❯](fg:#FFA500)[❯](yellow)[❯](green)[❯](blue)[❯](fg:#4b0082)[❯](fg:#8F00FF) """
-
+scan_timeout = 100
 [battery]
 full_symbol = "🔋 "
 charging_symbol = "⚡️ "
@@ -77,17 +74,11 @@ symbol = "🌱"
 
 [git_commit]
 tag_symbol = "🔖 "
-
-[custom.gaa]
-command = "git add -all"  # shows output of command
-format = " transcending [$output]($style)"
-
-[custom.gcsm]
-command = "git commit -s -m"
-format = " transcending [$output]"
-
 [time]
 disabled = false
 format = '🕙[\[ $time \]]($style) '
 time_format = "%T"
 utc_time_offset = "+5:30"
+
+[line_break]
+disabled = false
