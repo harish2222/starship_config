@@ -57,15 +57,12 @@ $battery\
 $time\
 $status\
 $shell\
-  [❯](cyan) """
+  [❯](red)[❯](fg:#FFA500)[❯](yellow)[❯](green)[❯](blue)[❯](fg:#4b0082)[❯](fg:#8F00FF) """
+
 [battery]
 full_symbol = "🔋 "
 charging_symbol = "⚡️ "
 discharging_symbol = "💀 "
-
-[[battery.display]]
-threshold = 10
-style = "bold red"
 
 [character]
 success_symbol = "[➜](bold green) "
@@ -87,4 +84,10 @@ format = " transcending [$output]($style)"
 
 [custom.gcsm]
 command = "git commit -s -m"
-format = " transcending [$output]($style)"
+format = " transcending [$output]"
+
+[time]
+disabled = false
+format = '🕙[\[ $time \]]($style) '
+time_format = "%T"
+utc_time_offset = "+5:30"
