@@ -1,6 +1,6 @@
 # Inserts a blank line between shell prompts
 format = """
-[HK](bold fg:#ED335F)[@](fg:bright-green)[Devs](italic fg:purple)  [➜](bold green) [$directory](fg:orange) $battery\ 
+[](fg:#00a2ed) [HK](bold fg:#ED335F)[@](fg:bright-green)[Devs](italic fg:purple) [](bold green) [$directory](fg:orange) $battery\ 
 $username\
 $hostname\
 $shlvl\
