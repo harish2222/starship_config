@@ -1,6 +1,6 @@
 # Inserts a blank line between shell prompts
 format = """
-[HK](bold fg:#ED335F)[@](fg:bright-green)[Devs](italic fg:purple) [➜](bold green) [$directory](fg:orange) $battery\ 
+[HK](bold fg:#ED335F)[@](fg:bright-green)[Devs](italic fg:purple)  [➜](bold green) [$directory](fg:orange) $battery\ 
 $username\
 $hostname\
 $shlvl\
@@ -29,8 +29,10 @@ $cmd_duration\
 $line_break\
 $status\
 $shell\
-  [❯](red)[❯](fg:#FFA500)[❯](yellow)[❯](green)[❯](blue)[❯](fg:#4b0082)[❯](fg:#8F00FF) """
+  [❯](bright-green) """
+
 scan_timeout = 100
+
 [battery]
 full_symbol = "🔋 "
 charging_symbol = "⚡️ "
@@ -39,16 +41,19 @@ discharging_symbol = "💀 "
 [character]
 success_symbol = "[➜](bold green) "
 error_symbol = "[✗](bold red) "
+
 [conda]
 format = "[$symbol$environment](dimmed green) "
 
 [docker_context]
 format = "via [🐋 $context](blue bold)"
+
 [git_branch]
 symbol = "🌱" 
 
 [git_commit]
 tag_symbol = "🔖 "
+
 [time]
 disabled = false
 format = '🕙[\[ $time \]]($style) '
@@ -56,4 +61,4 @@ time_format = "%T"
 utc_time_offset = "+5:30"
 
 [line_break]
-disabled = false
+disabled = false 
