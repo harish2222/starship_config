@@ -1,64 +1,57 @@
 # Inserts a blank line between shell prompts
 format = """
-[](fg:#00a2ed) [HK](bold fg:#ED335F)[@](fg:bright-green)[Devs](italic fg:purple) [](bold green) [$directory](fg:orange) $battery\ 
-$username\
-$hostname\
-$shlvl\
-$vcsh\
-$git_branch\
-$git_commit\
-$git_state\
-$git_status\
-$hg_branch\
-$docker_context\
-$package\
-$ocaml\
-$red\
-$vlang\
-$vagrant\
-$nix_shell\
-$conda\
-$memory_usage\
-$aws\
-$gcloud\
-$openstack\
-$env_var\
-$crystal\
-$custom\
-$cmd_duration\
-$line_break\
-$status\
-$shell\
-  [❯](bright-green) """
+[](fg:#00a2ed) [HK](bold fg:#ED335F)[](fg:bright-green)[Devs](italic fg:purple) [](bold green) $directory$vcsh$git_branch$git_commit$git_state$git_status$hg_branch$package$cmd_duration$line_break$status$shell$memory_usage\
+[❯](bright-green) """
 
 scan_timeout = 100
 
 [battery]
+disabled = false
 full_symbol = "🔋 "
 charging_symbol = "⚡️ "
 discharging_symbol = "💀 "
 
-[character]
-success_symbol = "[➜](bold green) "
-error_symbol = "[✗](bold red) "
-
 [conda]
 format = "[$symbol$environment](dimmed green) "
 
-[docker_context]
-format = "via [🐋 $context](blue bold)"
 
 [git_branch]
-symbol = "🌱" 
+symbol = "🌱"
+format = 'on [$symbol$branch]($style) '
+always_show_remote = true
 
 [git_commit]
-tag_symbol = "🔖 "
+tag_symbol = ""
+format = '[\\($hash\\)]($style) [\\($tag\\)]($style)'
 
 [time]
 disabled = false
 format = '🕙[\[ $time \]]($style) '
 time_format = "%T"
-utc_time_offset = "+5:30"
+utc_time_offset = "+0530"
 
 [line_break]
 disabled = false 
+
+[git_status]
+conflicted = "🏳"
+ahead = "🏎💨"
+behind = "😰"
+diverged = "😵"
+untracked = "🤷‍"
+stashed = "📦"
+modified = "📝"
+staged = '[++\($count\)](green)'
+renamed = "👅"
+deleted = "🗑"
+
+[vcsh]
+format = "[🆅 $repo](bold blue) "
+
+[memory_usage]
+symbol = ""
+#style = "bold dimmed blue"
+
+[git_state]
+format = '[\($state( $progress_current of $progress_total)\)]($style) '
+cherry_pick = "[🍒 PICKING](bold red)"
