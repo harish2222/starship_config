@@ -17,7 +17,7 @@ format = "[$symbol$environment](dimmed green) "
 
 [git_branch]
 symbol = "🌱"
-format = 'on [$symbol$branch]($style) '
+format = 'on [ ](fg:#FF33B8)[$symbol$branch]($style) '
 always_show_remote = true
 
 [git_commit]
@@ -35,9 +35,9 @@ disabled = false
 
 [git_status]
 conflicted = "🏳"
-ahead = "🏎💨"
-behind = "😰"
-diverged = "😵"
+ahead = '[](fg:pink)${count}'
+behind = "😰${count}"
+diverged = "😵${ahead_count}⇣${behind_count}"
 untracked = "🤷‍"
 stashed = "📦"
 modified = "📝"
